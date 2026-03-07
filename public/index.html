@@ -1,12 +1,21 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, World!</title>
-	</head>
-	<body>
-		<h1 id="heading">Hello, World!</h1>
-		<p>This page comes from a static asset stored at `public/index.html` as configured in `wrangler.jsonc`.</p>
-	</body>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>No web-pages</title>
+</head>
+
+<body>
+  <p>No content on this site should be a web-page.<br>
+    (Except, by reduction, this one.)</p>
+  <p>This small website exists for <a
+      href="https://datatracker.ietf.org/doc/draft-koch-openpgp-webkey-service/?include_text=1">OpenPGP Web Key
+      Directory</a> (aka WKD).</p>
+  <p>Given the email address <tt>example@zelleroehr.org</tt>, this site allows this next command to work:<br>
+    <tt>gpg --locate-external-keys example@zelleroehr.org</tt>
+  </p>
+  <p>WKD is also used by some graphical applications, and some web-based applications; appropriate URLs should have CORS
+    rules permitting full read access.</p>
+</body>
+
 </html>
