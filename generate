@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+rm -rf ./public/.well-known/
+mkdir -p ./public/.well-known/openpgpkey/zelleroehr.org/hu/
+touch ./public/.well-known/openpgpkey/zelleroehr.org/policy
+
+readonly keys=($(grep '^[^#]' "./keys.conf"))
+
+for key in "${keys[@]}"; do
+    wkdhash="$(gpg --list-keys --with-wkd-hash $key | grep -oP '[a-z0-9]+@' | awk 'NR % 2 == 0')"
+    wkdhash=${wkdhash%@}
+    gpg --export --export-options export-clean $key > ./public/.well-known/openpgpkey/zelleroehr.org/hu/$wkdhash
+done
