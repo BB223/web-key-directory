@@ -1,13 +1,14 @@
 {
-	"name": "web-key-directory",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
-		"start": "wrangler dev"
-	},
-	"devDependencies": {
-		"wrangler": "^4.71.0"
-	}
+  "name": "web-key-directory",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev",
+    "build": "./generate"
+  },
+  "devDependencies": {
+    "wrangler": "^4.71.0"
+  }
 }
